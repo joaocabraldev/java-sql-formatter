@@ -85,4 +85,17 @@ public class SqlFormatterTest {
         format,
         "SELECT\n" + "  aggregate(array(1, 2, 3), 0, (acc, x) -> acc + x, acc -> acc * 10);");
   }
+
+  @Test
+  public void withNotEquals() {
+    final String format = SqlFormatter.format("SELECT * FROM TEST WHERE ABC != '4'");
+    assertEquals(
+      format,
+        "SELECT\n"
+      + "  *\n"
+      + "FROM\n"
+      + "  TEST\n"
+      + "WHERE\n"
+      + "  ABC != '4'");
+  }
 }
