@@ -379,11 +379,11 @@ public class StandardSqlFormatter extends AbstractFormatter {
         .indexedPlaceholderTypes(Collections.singletonList("?"))
         .namedPlaceholderTypes(Collections.emptyList())
         .lineCommentTypes(Arrays.asList("--"))
-        .operators(List.of("||", "!="))
+        .operators(Arrays.asList("||", "!="))
         .build();
   }
 
-  public StandardSqlFormatter(FormatConfig cfg) {
+  StandardSqlFormatter(final FormatConfig cfg) {
     super(cfg);
   }
 }
