@@ -54,52 +54,6 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>org.openjdk.jmh</groupId>
-      <artifactId>jmh-generator-annprocess</artifactId>
-      <version>1.33</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <artifactId>kotlin-stdlib-jdk8</artifactId>
-      <version>${kotlin.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.spekframework.spek2</groupId>
-      <artifactId>spek-dsl-jvm</artifactId>
-      <version>${spek_version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.spekframework.spek2</groupId>
-      <artifactId>spek-runner-junit5</artifactId>
-      <version>${spek_version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <artifactId>kotlin-reflect</artifactId>
-      <version>${kotlin.version}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <artifactId>kotlin-test-junit</artifactId>
-      <version>${kotlin.version}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.amshove.kluent</groupId>
-      <artifactId>kluent</artifactId>
-      <version>1.68</version>
-      <scope>test</scope>
-    </dependency>
-
   </dependencies>
 
   <build>
@@ -121,6 +75,7 @@
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -130,6 +85,7 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+
       <plugin>
         <artifactId>maven-source-plugin</artifactId>
         <version>2.1.2</version>
@@ -143,6 +99,7 @@
           </execution>
         </executions>
       </plugin>
+      
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>3.1.0</version>
@@ -179,40 +136,6 @@
       </plugin>
 
       <plugin>
-        <groupId>org.jetbrains.kotlin</groupId>
-        <artifactId>kotlin-maven-plugin</artifactId>
-        <version>${kotlin.version}</version>
-        <executions>
-          <execution>
-            <id>test-compile</id>
-            <phase>test-compile</phase>
-            <goals>
-              <goal>test-compile</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.0.0</version>
-        <executions>
-          <execution>
-            <phase>generate-test-sources</phase>
-            <goals>
-              <goal>add-test-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>src/test/kotlin</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
         <groupId>com.diffplug.spotless</groupId>
         <artifactId>spotless-maven-plugin</artifactId>
         <version>2.28.0</version>
@@ -227,15 +150,6 @@
               <style>GOOGLE</style>
             </googleJavaFormat>
           </java>
-          <kotlin>
-            <includes>
-              <include>src/test/kotlin/**/*.kt</include>
-            </includes>
-            <ktfmt>
-              <version>0.39</version>
-              <style>GOOGLE</style>
-            </ktfmt>
-          </kotlin>
         </configuration>
         <executions>
           <execution>

@@ -89,13 +89,6 @@ public class SqlFormatterTest {
   @Test
   public void withNotEquals() {
     final String format = SqlFormatter.format("SELECT * FROM TEST WHERE ABC != '4'");
-    assertEquals(
-      format,
-        "SELECT\n"
-      + "  *\n"
-      + "FROM\n"
-      + "  TEST\n"
-      + "WHERE\n"
-      + "  ABC != '4'");
+    assertEquals(format, "SELECT\n" + "  *\n" + "FROM\n" + "  TEST\n" + "WHERE\n" + "  ABC != '4'");
   }
 }
